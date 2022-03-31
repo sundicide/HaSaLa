@@ -6,12 +6,7 @@ class Color {
   red = 0;
   green = 0;
   blue = 0;
-  // const bodyElem = document.querySelector('body')
-  // let result = getComputedStyle(bodyElem).getPropertyValue(key)
-  // if (key === STYLE_VARIABLE_NAME.SATURATION || key === STYLE_VARIABLE_NAME.LIGHTNESS) {
-  //   result = parseInt(result.trim().split('%')[0], 10)
-  // }
-  // return result
+
   constructor() {
     this.hue = getValueFromStyleProperty(STYLE_VARIABLE_NAME.HUE)
     this.saturation = getValueFromStyleProperty(STYLE_VARIABLE_NAME.SATURATION)
