@@ -167,9 +167,9 @@ function hexToRGB(h) {
     b = "0x" + h[4] + h[5];
   }
 
-  r = +(r / 255 * 100).toFixed(0);
-  g = +(g / 255 * 100).toFixed(0);
-  b = +(b / 255 * 100).toFixed(0);
+  r = parseInt(r, 16);
+  g = parseInt(g, 16);
+  b = parseInt(b, 16);
 
   return [r, g, b]
 }
