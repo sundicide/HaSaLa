@@ -15,6 +15,8 @@ body {
   --main-color-green: 0;
   --main-color-blue: 0;
   --main-color-hex: #FF0000;
+  --main-width: calc(300px + (var(--section-padding) * 2));
+  --section-padding: 15px;
   --gap: 10px;
   --shadow-color: 0deg 20% 56%;
   --shadow-elevation-medium:
@@ -33,7 +35,7 @@ body {
       25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
 
   font-family: 'Roboto', sans-serif;
-  min-width: 350px;
+  min-width: var(--main-width);
   background-color: hsl(var(--main-color-hue), var(--main-color-saturation), var(--main-color-lightness), 0.2);
 }
 main {
@@ -42,8 +44,8 @@ main {
 }
 section {
   margin: auto;
-  width: 350px;
-  padding: 25px;
+  width: var(--main-width);
+  padding: var(--section-padding);
   box-shadow: var(--shadow-elevation-high);
   position: relative;
 }
