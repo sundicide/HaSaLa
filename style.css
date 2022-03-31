@@ -45,6 +45,7 @@ section {
   width: 350px;
   padding: 25px;
   box-shadow: var(--shadow-elevation-high);
+  position: relative;
 }
 section .title {
   text-align: center;
@@ -182,4 +183,15 @@ section .title {
 }
 .color-result span {
   font-weight: bold;
+}
+
+.icon-link {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  transform: translate(0%, -100%);
+}
+.icon {
+  font-size: 24px;
 }
