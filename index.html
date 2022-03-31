@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style></style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <section>
+      <h1 class="title">HaSaLa</h1>
+      <div class="svg-area">
+        <span class="text">0 deg</span>
+      </div>
+      <div class="box saturation">
+        <input class="slider" type="range" min="0" max="100" value="100" step="1"
+          oninput="onChangeSaturation(this.value)">
+      </div>
+      <div class="box lightness">
+        <input class="slider" type="range" min="0" max="100" value="50" step="1" oninput="onChangeLightness(this.value)"
+          ondblclick="initLightness()">
+      </div>
+      <div class="color-result">
+        <span class="hsl-text">hsl(0 deg, 100%, 50%)</span>
+      </div>
+      <div class="color-result rgb">
+        <div class="wrapper">
+          <span>R</span>
+          <input maxlength="3" class="input r" type="number" value="255" onchange="onChangeRgb(this.value)" min="0"
+            max="255">
+        </div>
+        <div class="wrapper">
+          <span>G</span>
+          <input maxlength="3" class="input g" type="number" value="0" onchange="onChangeRgb(null, this.value, null)"
+            min="0" max="255">
+        </div>
+        <div class="wrapper">
+          <span>B</span>
+          <input maxlength="3" class="input b" type="number" value="0" onchange="onChangeRgb(null, null, this.value)"
+            min="0" max="255">
+        </div>
+      </div>
+      <div class="color-result hex">
+        <span class="subtitle">Hex Code: </span>
+        <span class="prefix">#</span>
+        <input maxlength="6" class="input" type="text" value="FF0000" onchange="onChangeHex(this.value)" />
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="conic-gradient.js"></script>
+  <script src="color-converter.js"></script>
+  <script src="common-utils.js"></script>
+  <script src="Classes.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
