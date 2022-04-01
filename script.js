@@ -112,8 +112,10 @@ gsap.to([circle], {
 
 function dragUpdate() {
   var rotation = gsap.getProperty(SELECTOR.WHEEL_CIRCLE, "rotation")
+
   d3.select(SELECTOR.COLOR_TRIANGLE_G)
-    .attr("transform", `rotate(${rotation})`)
+    .style("transform", `rotate(${rotation}deg)`)
+
   d3.select(SELECTOR.COLOR_TRIANGLE)
     .attr("fill", `hsl(${rotation}, 100%, 50%)`)
 
@@ -199,7 +201,8 @@ function updateTriangleColor() {
 
 function updateHSL(hue, saturation, lightness) {
   d3.select(SELECTOR.COLOR_TRIANGLE_G)
-    .attr("transform", `rotate(${hue})`)
+    .style("transform", `rotate(${hue}deg)`)
+
   d3.select(SELECTOR.COLOR_TRIANGLE)
     .attr("fill", `hsl(${hue}, 100%, 50%)`)
   d3.select(SELECTOR.WHEEL_CIRCLE)
