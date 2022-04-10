@@ -204,7 +204,7 @@ function updateHSL(hue, saturation, lightness) {
     .style("transform", `rotate(${hue}deg)`)
 
   d3.select(SELECTOR.COLOR_TRIANGLE)
-    .attr("fill", `hsl(${hue}, 100%, 50%)`)
+    .attr("fill", `hsl(${hue}, ${saturation}%, ${lightness}%)`)
   d3.select(SELECTOR.WHEEL_CIRCLE)
     .attr("transform", `rotate(${hue})`)
   gsap.set(SELECTOR.WHEEL_CIRCLE, {
