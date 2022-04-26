@@ -125,7 +125,7 @@ function dragUpdate() {
   if (rotation > 200)  color = `hsl(${rotation}, 20%, 80%)`
 
   d3.select(SELECTOR.RESULT_TEXT_HUE)
-    .text(`${rotation} deg`)
+    .text(`${rotation}deg`)
     .style('color', color)
 
   const colorHSL = new ColorHSL()
@@ -187,7 +187,7 @@ function updateHslColorText() {
   const lightness = getValueFromStyleProperty(STYLE_VARIABLE_NAME.LIGHTNESS)
 
   d3.select(SELECTOR.RESULT_TEXT_HSL)
-    .text(`hsl(${hue} deg, ${saturation}%, ${lightness}%)`)
+    .text(`hsl(${hue}deg, ${saturation}%, ${lightness}%)`)
 }
 
 function updateTriangleColor() {
@@ -216,7 +216,7 @@ function updateHSL(hue, saturation, lightness) {
   if (hue > 200)  color = `hsl(${hue}, 20%, 80%)`
 
   d3.select(SELECTOR.RESULT_TEXT_HUE)
-    .text(`${hue} deg`)
+    .text(`${hue}deg`)
     .style('color', color)
 
   setStyleProperty(STYLE_VARIABLE_NAME.HUE, hue)
@@ -227,7 +227,7 @@ function updateHSL(hue, saturation, lightness) {
   document.querySelector(SELECTOR.RESULT_INPUT_LIGHTNESS).value = lightness
 
   d3.select(SELECTOR.RESULT_TEXT_HSL)
-    .text(`hsl(${hue} deg, ${saturation}, ${lightness})`)
+    .text(`hsl(${hue}deg, ${saturation}, ${lightness})`)
 }
 
 /**
