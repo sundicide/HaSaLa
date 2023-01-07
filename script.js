@@ -73,7 +73,7 @@ const leftPoint = { x: svgHalfWidth - (r * Math.sqrt(3)), y: bottomMidPoint }
 
 traingleG.append("path")
   .attr("class", CLASSES.TRIANGLE)
-  .attr("fill", "hsl(0, 100%, 50%)")
+  .attr("fill", "hsl(0 100% 50%)")
   .attr("d", `M${topPoint.x} ${topPoint.y} L${rightPoint.x} ${rightPoint.y} L${leftPoint.x} ${leftPoint.y} Z`)
   .attr("stroke", "black")
   .attr("stroke-width", "1px")
@@ -82,7 +82,7 @@ traingleG.append("path")
 const triangleCircleR = 5
 traingleG.append('circle')
   .attr("class", CLASSES.TRIANGLE_CIRCLE)
-  .attr("fill", "hsl(0, 0%, 100%)")
+  .attr("fill", "hsl(0 0% 100%)")
   .attr("stroke", "black")
   .attr("stroke-width", "1px")
   .attr('cx', topPoint.x)
@@ -117,12 +117,12 @@ function dragUpdate() {
     .style("transform", `rotate(${rotation}deg)`)
 
   d3.select(SELECTOR.COLOR_TRIANGLE)
-    .attr("fill", `hsl(${rotation}, 100%, 50%)`)
+    .attr("fill", `hsl(${rotation} 100% 50%)`)
 
   setStyleProperty(STYLE_VARIABLE_NAME.HUE, rotation)
 
-  let color =  `hsl(${rotation}, 80%, 20%)`
-  if (rotation > 200)  color = `hsl(${rotation}, 20%, 80%)`
+  let color =  `hsl(${rotation} 80% 20%)`
+  if (rotation > 200)  color = `hsl(${rotation} 20% 80%)`
 
   d3.select(SELECTOR.RESULT_TEXT_HUE)
     .text(`${rotation}deg`)
@@ -187,7 +187,7 @@ function updateHslColorText() {
   const lightness = getValueFromStyleProperty(STYLE_VARIABLE_NAME.LIGHTNESS)
 
   d3.select(SELECTOR.RESULT_TEXT_HSL)
-    .text(`hsl(${hue}deg, ${saturation}%, ${lightness}%)`)
+    .text(`hsl(${hue}deg ${saturation}% ${lightness}%)`)
 }
 
 function updateTriangleColor() {
@@ -196,7 +196,7 @@ function updateTriangleColor() {
   const lightness = getValueFromStyleProperty(STYLE_VARIABLE_NAME.LIGHTNESS)
 
   d3.select(SELECTOR.COLOR_TRIANGLE)
-    .attr("fill", `hsl(${hue}deg, ${saturation}%, ${lightness}%)`)
+    .attr("fill", `hsl(${hue}deg ${saturation}% ${lightness}%)`)
 }
 
 function updateHSL(hue, saturation, lightness) {
@@ -204,7 +204,7 @@ function updateHSL(hue, saturation, lightness) {
     .style("transform", `rotate(${hue}deg)`)
 
   d3.select(SELECTOR.COLOR_TRIANGLE)
-    .attr("fill", `hsl(${hue}, ${saturation}%, ${lightness}%)`)
+    .attr("fill", `hsl(${hue} ${saturation}% ${lightness}%)`)
   d3.select(SELECTOR.WHEEL_CIRCLE)
     .attr("transform", `rotate(${hue})`)
   gsap.set(SELECTOR.WHEEL_CIRCLE, {
@@ -212,8 +212,8 @@ function updateHSL(hue, saturation, lightness) {
   })
 
 
-  let color =  `hsl(${hue}, 80%, 20%)`
-  if (hue > 200)  color = `hsl(${hue}, 20%, 80%)`
+  let color =  `hsl(${hue} 80% 20%)`
+  if (hue > 200)  color = `hsl(${hue} 20% 80%)`
 
   d3.select(SELECTOR.RESULT_TEXT_HUE)
     .text(`${hue}deg`)
@@ -227,7 +227,7 @@ function updateHSL(hue, saturation, lightness) {
   document.querySelector(SELECTOR.RESULT_INPUT_LIGHTNESS).value = lightness
 
   d3.select(SELECTOR.RESULT_TEXT_HSL)
-    .text(`hsl(${hue}deg, ${saturation}, ${lightness})`)
+    .text(`hsl(${hue}deg ${saturation} ${lightness})`)
 }
 
 /**
